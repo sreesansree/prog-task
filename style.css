@@ -44,7 +44,6 @@ body {
     font-size: 20px;
     overflow-x: hidden;
     background: #fff;
-
 }
 
 h1,
@@ -275,6 +274,8 @@ header {
     text-align: center;
 }
 
+
+
 .btn-started {
     border: 1px solid black;
     border-radius: 15px;
@@ -286,6 +287,13 @@ header {
     padding-right: 5px;
     margin-bottom: 15px;
     padding: 10px;
+    cursor: pointer;
+}
+
+.btn-started:hover {
+    background-color: #f0e9e9;
+    color: var(--font-400);
+    border: 1px solid transparent;
 }
 
 .banner-about {
@@ -315,6 +323,25 @@ header {
 .about-text span {
     color: var(--primary);
 }
+
+/* for the animation  */
+.section {
+    opacity: 0;
+    /* Hidden before animation */
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* When in view */
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section:nth-child(even) {
+    background: #ddd;
+}
+
 
 /* carousel-section */
 .gallery-wrap {
@@ -1200,12 +1227,19 @@ svg {
         color: var(--grey-200);
         display: flex;
         align-items: center;
-        padding-left: 5px;
-        padding-right: 5px;
+        /* padding-left: 5px;
+        padding-right: 5px; */
+        gap: 5px;
         margin-bottom: 10px;
         padding: 8px;
         font-size: 12px;
 
+    }
+
+    .btn-started:hover {
+        background-color: #f0e9e9;
+        color: var(--font-800);
+        border: 1px solid transparent;
     }
 
     .banner-text p {
