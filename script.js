@@ -13,6 +13,7 @@ document.getElementById("menu-icon").addEventListener("click", function () {
     : "&#9776;";
 });
 
+/* Animation */
 const sections = document.querySelectorAll(".fade-in");
 
 const observer = new IntersectionObserver(
@@ -30,4 +31,29 @@ const observer = new IntersectionObserver(
 );
 sections.forEach((section) => {
   observer.observe(section);
+});
+
+/* Gallery Navigation button */
+
+const gallery = document.querySelector(".gallery");
+const prevBtn = document.querySelector(".nav-btn--ghost");
+const nextBtn = document.querySelector(".nav-btn--solid");
+
+// Get the width of the first card (including gap)
+
+function getCardWidth() {
+  const firstCard = gallery.querySelector("*");
+  const style = window.getComputedStyle(firstCard);
+  const gap = parseInt(style.marginRight || 0) || parseInt(style.gap || 0) || 0;
+  return firstCard.offsetWidth + gap;
+}
+
+nextBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  gallery.scrollBy({ left: getCardWidth(), behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  gallery.scrollBy({ left: -getCardWidth(), behavior: "smooth" });
 });

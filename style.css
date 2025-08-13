@@ -481,6 +481,11 @@ figcaption {
     box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
 }
 
+.nav-btn--ghost:hover {
+    color: #fff;
+    background-color: var(--font-400);
+}
+
 .nav-btn--solid {
     background: #111827;
     color: #fff;
@@ -514,8 +519,8 @@ figcaption {
     position: relative;
     isolation: isolate;
     background-image: var(--gg-hero-img, url('about:blank'));
-    background-size: cover;
-    background-position: center;
+    background-size: 100% 100%;
+    background-position: fill;
     height: clamp(320px, 56vh, 680px);
     border-bottom: 1px solid #eaeaea;
 }
@@ -536,7 +541,8 @@ figcaption {
 .gg .gg-hero__title {
     color: #fff;
     margin: 0;
-    font-weight: 650;
+    padding-bottom: 140px;
+    font-weight: 250;
     line-height: 1.15;
     font-size: clamp(1.9rem, 3vw + 1rem, 3.25rem);
     text-shadow: 0 2px 14px rgba(0, 0, 0, .25);
@@ -831,8 +837,6 @@ figcaption {
 
 }
 
-
-
 a {
     color: var(--link);
     text-decoration: none;
@@ -1098,6 +1102,7 @@ svg {
 }
 
 /* Decorative oversized word at bottom */
+
 .bg-word {
     position: absolute;
     inset-inline: 0;
@@ -1116,10 +1121,11 @@ svg {
     font-weight: 900;
     letter-spacing: .01em;
     line-height: 1;
-    font-size: clamp(72px, 14vw, 220px);
+    font-size: clamp(72px, 14vw, 200px);
     white-space: nowrap;
-    overflow: hidden
+    overflow: hidden;
 }
+
 
 /* Responsive Styles */
 @media (min-width: 560px) {
